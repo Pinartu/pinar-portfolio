@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============ SEO ============ -->
+<title>Notes & Tools — Pinar Taskin | E-commerce, AI & SEO Insights</title>
+<meta name="description" content="Short notes, LinkedIn posts and tools on e-commerce, AI-augmented workflows, SEO and the EU AI Act — from Pinar Taskin, freelance e-commerce growth specialist.">
+<meta name="keywords" content="ecommerce notes, AI workflow tools, SEO tips, EU AI Act, shopify, amazon, linkedin posts, ecommerce blog">
+<meta name="author" content="Pinar Taskin">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://pinar-portfolio-mu.vercel.app/notes/">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Notes & Tools — Pinar Taskin">
+<meta property="og:description" content="Short notes, LinkedIn posts and tools on e-commerce, AI workflows, SEO and the EU AI Act.">
+<meta property="og:url" content="https://pinar-portfolio-mu.vercel.app/notes/">
+<meta property="og:site_name" content="Pinar Taskin — E-commerce Studio">
+<meta property="og:image" content="https://pinar-portfolio-mu.vercel.app/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Notes & Tools — Pinar Taskin">
+<meta name="twitter:description" content="E-commerce, AI workflows, SEO and EU AI Act notes & tools.">
+<meta name="twitter:image" content="https://pinar-portfolio-mu.vercel.app/og-image.png">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e5e4e'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='bold' text-anchor='middle' fill='%23faf8f5'%3EP%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#2e5e4e">
+
+<!-- Collection schema for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Notes & Tools — Pinar Taskin",
+  "description": "Short notes, LinkedIn posts and tools on e-commerce, AI workflows, SEO and the EU AI Act.",
+  "url": "https://pinar-portfolio-mu.vercel.app/notes/",
+  "author": { "@type": "Person", "name": "Pinar Taskin" }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --accent:#2e5e4e;          /* green  */
+    --amber:#c47d1a;           /* carousel orange — used for tags */
+    --bg:#faf8f5;              /* cream  */
+    --card:#ffffff;
+    --txt:#26231e;
+    --muted:#6d675d;
+    --line:rgba(30,27,22,.10);
+    --accent-dim:rgba(46,94,78,.08);
+    --radius:16px;
+    --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    --font-display:'Fraunces',Georgia,'Times New Roman',serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--txt);font-family:var(--font);line-height:1.6;overflow-x:clip}
+
+  /* ---------- NAV (matches main site) ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 6vw;transition:background .3s}
+  nav.scrolled{background:rgba(250,248,245,.88);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+  .logo{font-family:var(--font);font-weight:800;font-size:1.05rem;color:var(--txt);text-decoration:none;letter-spacing:-.01em}
+  .logo span{color:var(--accent)}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+  .nav-links a:hover{color:var(--txt)}
+  .nav-links a.active{color:var(--accent);font-weight:700}
+  .nav-cta{background:var(--accent);color:#fff!important;padding:9px 20px;border-radius:99px;font-weight:700!important}
+  .burger{display:none;background:none;border:none;color:var(--txt);font-size:1.5rem;cursor:pointer}
+
+  /* ---------- PAGE HEAD ---------- */
+  .page-head{padding:140px 6vw 30px;max-width:760px}
+  .kicker{color:var(--accent);font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;display:block}
+  .page-head h1{font-family:var(--font-display);font-size:clamp(2rem,4.4vw,3.2rem);font-weight:600;letter-spacing:-.015em;line-height:1.1}
+  .page-head p{color:var(--muted);margin-top:18px;font-size:1.05rem;max-width:620px}
+
+  /* ---------- FILTERS ---------- */
+  .filters{display:flex;gap:10px;padding:24px 6vw 0;flex-wrap:wrap}
+  .filter{background:none;border:1px solid var(--line);color:var(--muted);padding:8px 18px;border-radius:99px;font-family:var(--font);font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s}
+  .filter:hover{border-color:var(--accent);color:var(--accent)}
+  .filter.active{background:var(--accent);border-color:var(--accent);color:#fff}
+
+  /* ---------- GRID + CARDS ---------- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:24px;padding:36px 6vw 110px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;text-decoration:none;color:var(--txt);transition:transform .3s,border-color .3s,box-shadow .3s}
+  .card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 18px 40px -24px rgba(46,94,78,.4)}
+  .card .tag{align-self:flex-start;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:99px;margin-bottom:16px}
+  .tag.post{background:var(--accent-dim);color:var(--accent)}
+  .tag.tool{background:rgba(196,125,26,.12);color:var(--amber)}
+  .card h2{font-family:var(--font-display);font-size:1.3rem;font-weight:600;line-height:1.25;letter-spacing:-.01em}
+  .card .excerpt{color:var(--muted);font-size:.95rem;margin-top:12px;flex-grow:1}
+  .card .meta{margin-top:20px;font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:10px}
+  .card .arrow{color:var(--accent);font-weight:700;margin-top:18px;font-size:.9rem}
+  .card.tool .arrow{color:var(--amber)}
+  .card[hidden]{display:none}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:60px 6vw;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-start}
+  footer .f-brand .logo{font-size:1.1rem}
+  footer p{color:var(--muted);font-size:.85rem;margin-top:10px}
+  .f-links{display:flex;gap:22px;flex-wrap:wrap}
+  .f-links a{color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:500}
+  .f-links a:hover{color:var(--accent)}
+  .f-copy{width:100%;color:var(--muted);font-size:.8rem;margin-top:20px}
+
+  @media(max-width:760px){
+    .nav-links{display:none}
+    .burger{display:block}
+    .nav-links.open{display:flex;position:absolute;top:62px;right:6vw;background:var(--bg);flex-direction:column;gap:18px;padding:22px 28px;border:1px solid var(--line);border-radius:14px;box-shadow:0 20px 50px -20px rgba(0,0,0,.3)}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav id="nav">
+  <a class="logo" href="/">PINAR<span>TASKIN</span></a>
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <div class="nav-links" id="navLinks">
+    <a href="/#services">Services</a>
+    <a href="/#work">Case Studies</a>
+    <a href="/#ai-workflow">AI Workflow</a>
+    <a href="/#about">About</a>
+    <a href="/notes/" class="active">Notes &amp; Tools</a>
+    <a href="/#contact" class="nav-cta">Let's Talk</a>
+  </div>
+</nav>
+
+<!-- ============ PAGE HEAD ============ -->
+<section class="page-head">
+  <span class="kicker">Notes &amp; Tools</span>
+  <h1>Thinking out loud about e-commerce, AI &amp; SEO.</h1>
+  <p>Short notes, adapted LinkedIn posts, and the tools I actually use — building AI into e-commerce operations every day, from a legal background.</p>
+</section>
+
+<!-- ============ FILTERS ============ -->
+<div class="filters">
+  <button class="filter active" data-filter="all">All</button>
+  <button class="filter" data-filter="post">Posts</button>
+  <button class="filter" data-filter="tool">Tools</button>
+</div>
+
+<!-- ============ CARD GRID ============
+     HOW TO ADD A NEW ITEM:
+     1) Copy one of the card blocks below (a POST card or a TOOL card).
+     2) Paste it right under the "NEW CARD HERE" comment.
+     3) Change the link (href), tag, title, excerpt and date.
+     For a full POST page, also duplicate notes/_TEMPLATE.html — see HOW-TO-ADD.md
+============================================================ -->
+<main class="grid" id="grid">
+
+  <!-- ▼▼▼ NEW CARD HERE — paste new cards directly below this line ▼▼▼ -->
+
+  <!-- ===== POST CARD (example — EU AI Act) ===== -->
+  <a class="card post" data-type="post" href="/notes/eu-ai-act-article-4-readiness.html">
+    <span class="tag post">Post · EU AI Act</span>
+    <h2>You're 7 weeks from the EU AI Act's literacy deadline. Here's the self-audit I'd run first.</h2>
+    <p class="excerpt">From Aug 2, 2026, AI literacy becomes a legal obligation under Article 4 — and it reaches far beyond the EU. A 12-question self-assessment for your team.</p>
+    <div class="meta"><time datetime="2026-06-16">Jun 16, 2026</time> · 4 min read</div>
+    <span class="arrow">Read the note →</span>
+  </a>
+
+  <!-- ===== TOOL CARD — EU AI Act Article 4 Audit Panel ===== -->
+  <a class="card tool" data-type="tool" href="/notes/tools/eu-ai-act-article-4-audit.html">
+    <span class="tag tool">Tool · EU AI Act</span>
+    <h2>EU AI Act Article 4 — Internal Audit Panel</h2>
+    <p class="excerpt">An interactive self-audit panel for the Article 4 AI-literacy obligation: score your readiness across inventory, training and documentation, and see your gaps visualised before Aug 2, 2026.</p>
+    <div class="meta">Free · Interactive · Web</div>
+    <span class="arrow">Open the tool →</span>
+  </a>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="f-brand">
+    <a class="logo" href="/">PINAR<span>TASKIN</span></a>
+    <p>E-commerce Growth Specialist<br>Based in Australia · Working worldwide</p>
+  </div>
+  <div class="f-links">
+    <a href="/#services">Services</a>
+    <a href="/#work">Case Studies</a>
+    <a href="/#ai-workflow">AI Workflow</a>
+    <a href="/#about">About</a>
+    <a href="/notes/">Notes &amp; Tools</a>
+    <a href="/#contact">Contact</a>
+  </div>
+  <p class="f-copy">© 2026 Pinar Taskin — E-commerce Studio.<br>Built by hand, optimized by obsession.</p>
+</footer>
+
+<script>
+  // nav background on scroll
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
+
+  // mobile menu
+  const burger=document.getElementById('burger'),links=document.getElementById('navLinks');
+  burger.addEventListener('click',()=>links.classList.toggle('open'));
+
+  // filters
+  const cards=[...document.querySelectorAll('#grid .card')];
+  document.querySelectorAll('.filter').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelector('.filter.active').classList.remove('active');
+      btn.classList.add('active');
+      const f=btn.dataset.filter;
+      cards.forEach(c=>c.hidden = !(f==='all'||c.dataset.type===f));
+    });
+  });
+</script>
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                               
