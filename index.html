@@ -328,9 +328,12 @@ footer .f-links a:hover{color:var(--accent)}
 
 /* ---------- responsive ---------- */
 @media(max-width:900px){
-  .nav-links{position:fixed;inset:0;background:rgba(250,248,245,.98);flex-direction:column;justify-content:center;font-size:1.2rem;display:none}
+  .nav-links{position:fixed;inset:0;background:var(--bg);flex-direction:column;justify-content:flex-start;align-items:center;gap:26px;font-size:1.3rem;display:none;padding:96px 24px 48px;overflow-y:auto;-webkit-overflow-scrolling:touch}
   .nav-links.open{display:flex}
-  .burger{display:block;z-index:101}
+  .nav-links a{width:100%;max-width:320px;text-align:center;padding:6px 0}
+  .nav-links .nav-cta{width:auto;padding:12px 32px;margin-top:6px}
+  body.menu-open{overflow:hidden}
+  .burger{display:block;z-index:101;line-height:1}
   .case{grid-template-columns:1fr;padding:36px 28px}
   .about-grid{grid-template-columns:1fr;gap:44px}
   section{padding:80px 6vw}
@@ -585,8 +588,9 @@ addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passi
 
 // mobile menu
 const burger=document.getElementById('burger'),links=document.getElementById('navLinks');
-burger.addEventListener('click',()=>links.classList.toggle('open'));
-links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+const setMenu=open=>{links.classList.toggle('open',open);document.body.classList.toggle('menu-open',open);burger.textContent=open?'✕':'☰';burger.setAttribute('aria-expanded',open);};
+burger.addEventListener('click',()=>setMenu(!links.classList.contains('open')));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
 
 // scroll reveal
 const io=new IntersectionObserver(es=>es.forEach(e=>{
