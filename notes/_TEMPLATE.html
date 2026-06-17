@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!-- =====================================================================
+     POST TEMPLATE  —  HOW TO USE
+     1) Copy this file. Rename it to your-post-slug.html
+        (use lowercase words and hyphens, no spaces — this becomes the URL).
+     2) Replace every {{PLACEHOLDER}} below with your content.
+     3) Write the body of the post inside the <article> section.
+     4) Add a card linking to it in notes/index.html (see the comment there).
+     5) Add the new URL to /sitemap.xml.
+     Tip: the {{PLACEHOLDER}} text appears in BOTH the SEO tags and the page —
+     search the file for "{{" to make sure you've replaced them all.
+===================================================================== -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== SEO — edit these ===== -->
+<title>{{POST TITLE}} | Pinar Taskin</title>
+<meta name="description" content="{{ONE-SENTENCE SUMMARY, ~155 CHARS — this is what shows in Google results.}}">
+<meta name="keywords" content="{{keyword one, keyword two, keyword three}}">
+<meta name="author" content="Pinar Taskin">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://pinar-portfolio-mu.vercel.app/notes/{{your-post-slug}}.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{POST TITLE}}">
+<meta property="og:description" content="{{ONE-SENTENCE SUMMARY}}">
+<meta property="og:url" content="https://pinar-portfolio-mu.vercel.app/notes/{{your-post-slug}}.html">
+<meta property="og:site_name" content="Pinar Taskin — E-commerce Studio">
+<meta property="og:image" content="https://pinar-portfolio-mu.vercel.app/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{POST TITLE}}">
+<meta name="twitter:description" content="{{ONE-SENTENCE SUMMARY}}">
+<meta name="twitter:image" content="https://pinar-portfolio-mu.vercel.app/og-image.png">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e5e4e'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='bold' text-anchor='middle' fill='%23faf8f5'%3EP%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#2e5e4e">
+
+<!-- ===== Article + Breadcrumb schema — edit the {{...}} values ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{POST TITLE}}",
+  "description": "{{ONE-SENTENCE SUMMARY}}",
+  "datePublished": "{{YYYY-MM-DD}}",
+  "dateModified": "{{YYYY-MM-DD}}",
+  "author": { "@type": "Person", "name": "Pinar Taskin", "url": "https://pinar-portfolio-mu.vercel.app/" },
+  "publisher": { "@type": "Person", "name": "Pinar Taskin" },
+  "mainEntityOfPage": "https://pinar-portfolio-mu.vercel.app/notes/{{your-post-slug}}.html",
+  "image": "https://pinar-portfolio-mu.vercel.app/og-image.png"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --accent:#2e5e4e;--amber:#c47d1a;--bg:#faf8f5;--card:#ffffff;
+    --txt:#26231e;--muted:#6d675d;--line:rgba(30,27,22,.10);
+    --accent-dim:rgba(46,94,78,.08);--radius:16px;
+    --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    --font-display:'Fraunces',Georgia,'Times New Roman',serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--txt);font-family:var(--font);line-height:1.7;overflow-x:clip}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 6vw;transition:background .3s}
+  nav.scrolled{background:rgba(250,248,245,.88);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+  .logo{font-family:var(--font);font-weight:800;font-size:1.05rem;color:var(--txt);text-decoration:none;letter-spacing:-.01em}
+  .logo span{color:var(--accent)}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+  .nav-links a:hover{color:var(--txt)}
+  .nav-links a.active{color:var(--accent);font-weight:700}
+  .nav-cta{background:var(--accent);color:#fff!important;padding:9px 20px;border-radius:99px;font-weight:700!important}
+  .burger{display:none;background:none;border:none;color:var(--txt);font-size:1.5rem;cursor:pointer}
+  .article{max-width:720px;margin:0 auto;padding:140px 6vw 40px}
+  .breadcrumb{font-size:.8rem;color:var(--muted);margin-bottom:24px}
+  .breadcrumb a{color:var(--muted);text-decoration:none}.breadcrumb a:hover{color:var(--accent)}
+  .kicker{color:var(--amber);font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px;display:block}
+  .article h1{font-family:var(--font-display);font-size:clamp(2rem,4.6vw,3rem);font-weight:600;line-height:1.12;letter-spacing:-.015em}
+  .byline{color:var(--muted);font-size:.85rem;margin-top:20px;padding-bottom:30px;border-bottom:1px solid var(--line)}
+  .article h2{font-family:var(--font-display);font-size:clamp(1.4rem,2.6vw,1.8rem);font-weight:600;line-height:1.2;margin:48px 0 16px}
+  .article p{color:#3a352e;font-size:1.08rem;margin-bottom:20px}
+  .article strong{color:var(--accent);font-weight:700}
+  .lead{font-size:1.2rem!important;color:var(--txt)!important}
+  .callout{background:var(--accent-dim);border-left:4px solid var(--accent);border-radius:12px;padding:22px 26px;margin:32px 0}
+  .callout p{margin:0;font-size:1.05rem;color:var(--txt)}
+  .callout.amber{background:rgba(196,125,26,.1);border-left-color:var(--amber)}
+  .post-cta{margin:40px 0 10px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:13px 28px;border-radius:99px;font-weight:700;font-size:.92rem;text-decoration:none;transition:transform .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-ghost{border:1px solid var(--line);color:var(--txt)}
+  footer{padding:60px 6vw;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-start;margin-top:40px}
+  footer .f-brand .logo{font-size:1.1rem}
+  footer p{color:var(--muted);font-size:.85rem;margin-top:10px}
+  .f-links{display:flex;gap:22px;flex-wrap:wrap}
+  .f-links a{color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:500}.f-links a:hover{color:var(--accent)}
+  .f-copy{width:100%;color:var(--muted);font-size:.8rem;margin-top:20px}
+  @media(max-width:760px){
+    .nav-links{display:none}.burger{display:block}
+    .nav-links.open{display:flex;position:absolute;top:62px;right:6vw;background:var(--bg);flex-direction:column;gap:18px;padding:22px 28px;border:1px solid var(--line);border-radius:14px;box-shadow:0 20px 50px -20px rgba(0,0,0,.3)}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV (leave as-is) ===== -->
+<nav id="nav">
+  <a class="logo" href="/">PINAR<span>TASKIN</span></a>
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <div class="nav-links" id="navLinks">
+    <a href="/#services">Services</a>
+    <a href="/#work">Case Studies</a>
+    <a href="/#ai-workflow">AI Workflow</a>
+    <a href="/#about">About</a>
+    <a href="/notes/" class="active">Notes &amp; Tools</a>
+    <a href="/#contact" class="nav-cta">Let's Talk</a>
+  </div>
+</nav>
+
+<!-- ===== ARTICLE — write your post here ===== -->
+<article class="article">
+  <nav class="breadcrumb"><a href="/">Home</a> › <a href="/notes/">Notes &amp; Tools</a> › {{SHORT BREADCRUMB LABEL}}</nav>
+
+  <span class="kicker">{{TOPIC / CATEGORY}}</span>
+  <h1>{{POST TITLE}}</h1>
+  <div class="byline">By Pinar Taskin · Published {{Mon DD, YYYY}} · {{N}} min read</div>
+
+  <p class="lead">{{Opening line — the hook. One strong sentence.}}</p>
+
+  <h2>{{Section heading}}</h2>
+  <p>{{Paragraph. Use <strong>bold</strong> for key phrases — it renders in green.}}</p>
+
+  <div class="callout">
+    <p><strong>{{Optional highlight box.}}</strong> {{Supporting sentence.}}</p>
+  </div>
+
+  <h2>{{Another section}}</h2>
+  <p>{{More content...}}</p>
+
+  <div class="post-cta">
+    <a class="btn btn-primary" href="/#contact">{{Call to action, e.g. Work with me}}</a>
+    <a class="btn btn-ghost" href="/notes/">← Back to Notes &amp; Tools</a>
+  </div>
+
+  <!-- Use this line only if the topic is legal/regulatory: -->
+  <!-- <p class="disclaimer">This is general information, not legal advice.</p> -->
+</article>
+
+<!-- ===== FOOTER (leave as-is) ===== -->
+<footer>
+  <div class="f-brand">
+    <a class="logo" href="/">PINAR<span>TASKIN</span></a>
+    <p>E-commerce Growth Specialist<br>Based in Australia · Working worldwide</p>
+  </div>
+  <div class="f-links">
+    <a href="/#services">Services</a>
+    <a href="/#work">Case Studies</a>
+    <a href="/#ai-workflow">AI Workflow</a>
+    <a href="/#about">About</a>
+    <a href="/notes/">Notes &amp; Tools</a>
+    <a href="/#contact">Contact</a>
+  </div>
+  <p class="f-copy">© 2026 Pinar Taskin — E-commerce Studio.<br>Built by hand, optimized by obsession.</p>
+</footer>
+
+<script>
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
+  const burger=document.getElementById('burger'),links=document.getElementById('navLinks');
+  burger.addEventListener('click',()=>links.classList.toggle('open'));
+</script>
+</body>
+</html>
